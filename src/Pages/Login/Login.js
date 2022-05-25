@@ -1,11 +1,10 @@
 import React from 'react';
-import auth from '../../../firebase.init';
+import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth'
-import social from '../../../images/social/google.png'
+import social from '../../images/social/google.png'
 import { useForm } from "react-hook-form";
-
-
-
+import Loading from '../Shared/Loading/Loading';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -16,23 +15,16 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
-
       let errorMessage;
-
-   if(loading || gLoading){
-       return <button class="btn loading">loading</button>
+   if( loading || gLoading){
+       return <Loading></Loading>
    }
-
    if(error || gError){
-       errorMessage = <p>{error?.message || gError?.message}</p>
-
+       errorMessage = <p className='text-red-800'>{error?.message || gError?.message}</p>
    }
-
-    if (gUser) {
-        console.log(gUser);
-       
+    if (user || gUser) {
+        console.log(gUser); 
     }
-
     const onSubmit = data => {
         console.log(data);
         signInWithEmailAndPassword(data.email, data.password)
@@ -97,31 +89,13 @@ const Login = () => {
                                {errors.password?.type === 'minLength' && <span className='label-text-alt text-red-800 '> {errors.password.message}</span>}
                             </label>
                         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                       
                                      {errorMessage}
                         <input className='btn w-full max-w-xs' type="submit" value="Login" />
                     </form>
 
-
+                    <p className='mb-4 text-xl'>
+                Don't have any account? <Link className='text-gray-400 hover:text-gray-900' to="/signup"> Create an account</Link>
+            </p>
                     <div className="divider">OR</div>
                     <button onClick={() => signInWithGoogle()} className="btn btn-outline">  <img className='mx-2' style={{ width: '20px' }} src={social} alt="" /> Sign in with google</button>
 
