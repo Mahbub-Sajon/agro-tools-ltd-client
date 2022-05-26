@@ -4,7 +4,7 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import social from '../../images/social/google.png'
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading/Loading';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -16,6 +16,12 @@ const Login = () => {
         error,
       ] = useSignInWithEmailAndPassword(auth);
       let errorMessage;
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || '/';
+
+
    if( loading || gLoading){
        return <Loading></Loading>
    }
@@ -23,7 +29,7 @@ const Login = () => {
        errorMessage = <p className='text-red-800'>{error?.message || gError?.message}</p>
    }
     if (user || gUser) {
-        console.log(gUser); 
+        navigate(from, {replace: true}); 
     }
     const onSubmit = data => {
         console.log(data);
