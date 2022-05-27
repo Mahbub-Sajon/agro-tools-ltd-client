@@ -1,0 +1,51 @@
+[
+    {
+      "name": "Grape Hoe",
+      "price": 1000,
+      "description": "A hoe is a garden hand tool used to cultivate the soil and remove weeds. It's an ancient tool that predates the plow. Hoes were used in ancient Egypt and in the Sumerian culture to cultivate gardens. It has a simple design—a long handle with a paddle, blade or stirrup at the end, typically at an angle to the handle.",
+      "img": "https://i.ibb.co/wWf7JBQ/grape-hoe.jpg",
+      "available": 1000,
+      "order": 100
+    },
+    {
+      "name": "Grass Shears",
+      "price":  1200,
+      "description": "They can be used to cut grass from a standing position. Two kinds are available: with the blades horizontal and with the blades vertical. Horizontal blades are used to remove grass which has not been cut by the lawn mower, while vertical blades are used for trimming the edges of a lawn.",
+      "img": "https://i.ibb.co/0hhpYnB/grass-shears.jpg",
+      "available": 1500,
+      "order": 100
+    },
+    {
+      "name": "Hedge Shears",
+      "price":  900,
+      "description": "Hedge shears look a lot like giant scissors with their long pair of straight blades. Their design lends itself to cutting as much of a plant as possible in one single sweep. When you use hedge shears to trim your bushes, they will create long sharp edges on anything you cut.",
+      "img": "https://i.ibb.co/B3jZhYn/headge-shears.jpg",
+      "available": 1000,
+      "order": 100
+    },
+    {
+      "name": "Lawn Rake",
+      "price": 500,
+      "description": "A rake is a type of gardening or landscaping tool with a handle that ends in a head. You can use a rake for scooping, scraping, gathering, or leveling materials, such as soil, mulch, or leaves.",
+      "img": "https://i.ibb.co/fNM96QZ/rake.png",
+      "available": 800,
+      "order": 100
+    },
+    {
+      "name": "Pruning Shears",
+      "price":  850,
+      "description": "Pruning shears are used to cut branches and also remove inflorescence containing 15–20 capsular fruits. Once harvested, the fruit are carried in baskets to a land or a warehouse where, after drying, they will be processed in specific equipments or manually.",
+      "img": "https://i.ibb.co/d4myMJ3/pruning-shears.jpg",
+      "available": 1300,
+      "order": 100
+    },
+    {
+      "name": "Sickle",
+      "price": 500,
+      "description": "A sickle, bagging hook, reaping-hook or grass hook is a single-handed agricultural tool designed with variously curved blades and typically used for harvesting, or reaping, grain crops or cutting succulent forage chiefly for feeding livestock, either freshly cut or dried as hay.",
+      "img": "https://i.ibb.co/YThk8ZZ/Sickle-1.webp",
+      "available": 1000,
+      "order": 100
+    }
+    
+]
