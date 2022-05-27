@@ -7,6 +7,7 @@ import Navbar from './Pages/Shared/Navbar';
 import SignUp from './Pages/SignUp/SignUp';
 import MyOrders from './Pages/MyOrders/MyOrders';
 import RequireAuth from './Pages/Components/RequireAuth/RequireAuth';
+import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
 
 function App() {
   return (
@@ -19,6 +20,13 @@ function App() {
       <MyOrders></MyOrders>
     </RequireAuth>
     }></Route>
+
+    <Route path='/place-order/:id' element={
+    <RequireAuth>
+     <PlaceOrder></PlaceOrder>
+    </RequireAuth>
+    }></Route>
+
     <Route path='/signup' element={<SignUp></SignUp>}></Route>
     <Route path='/login' element={<Login></Login>}></Route>
     <Route path='/blog' element={<Blog></Blog>}></Route>

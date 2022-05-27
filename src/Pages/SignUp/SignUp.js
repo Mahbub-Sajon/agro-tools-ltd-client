@@ -124,14 +124,14 @@ const SignUp = () => {
                             </label>
                         </div>
                         {errorMessage}
-                        <input className='btn w-full max-w-xs' type="submit" value="Sign Up" />
+                        <input className='btn btn-primary w-full max-w-xs' type="submit" value="Sign Up" />
                     </form>
 
                     <p className='mb-4 text-xl'>
-                        Already have any account? <Link className='text-gray-400 hover:text-gray-900' to="/login">Login to your account</Link>
+                        Already have any account? <Link className='text-primary hover:text-gray-900' to="/login">Login to your account</Link>
                     </p>
                     <div className="divider">OR</div>
-                    <button onClick={() => signInWithGoogle()} className="btn btn-outline">  <img className='mx-2' style={{ width: '20px' }} src={social} alt="" /> Sign in with google</button>
+                    <button onClick={() => signInWithGoogle()} className="btn btn-outline hover:btn-primary">  <img className='mx-2' style={{ width: '20px' }} src={social} alt="" /> Sign in with google</button>
 
                 </div>
             </div>
