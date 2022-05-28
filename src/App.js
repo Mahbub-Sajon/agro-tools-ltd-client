@@ -9,6 +9,7 @@ import MyOrders from './Pages/MyOrders/MyOrders';
 import RequireAuth from './Pages/Components/RequireAuth/RequireAuth';
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import Review from './Pages/Components/Review/Review';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
 
     <Route path='/my-order' element={
     <RequireAuth>
-      <MyOrders></MyOrders>
+     <MyOrders></MyOrders>
     </RequireAuth>
     }></Route>
 
@@ -27,7 +28,10 @@ function App() {
     <RequireAuth>
      <Dashboard></Dashboard>
     </RequireAuth>
-    }></Route>
+    }>
+      <Route index element={ <MyOrders></MyOrders>}></Route>
+      <Route path='review' element={<Review></Review>}></Route>
+    </Route>
 
     <Route path='/place-order/:id' element={
     <RequireAuth>

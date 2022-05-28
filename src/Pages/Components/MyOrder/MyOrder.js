@@ -6,8 +6,7 @@ const MyOrder = ({myOrder}) => {
         <div>
             <h2>Product Name: {myOrder.product}</h2>
             <p>Ordered Quantity: {myOrder.orderQuantity}</p>
-            <p>Per Unit Price: {myOrder.price}</p>
-            <p>Total Payable Price: {myOrder.price}</p>
+            <button className='btn btn-primary'>Payment</button>
         </div>
     );
 };
