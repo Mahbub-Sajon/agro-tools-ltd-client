@@ -8,6 +8,7 @@ import SignUp from './Pages/SignUp/SignUp';
 import MyOrders from './Pages/MyOrders/MyOrders';
 import RequireAuth from './Pages/Components/RequireAuth/RequireAuth';
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -15,9 +16,16 @@ function App() {
        <Navbar></Navbar>
      <Routes>
     <Route path='/' element={<Home></Home>}> </Route>
+
     <Route path='/my-order' element={
     <RequireAuth>
       <MyOrders></MyOrders>
+    </RequireAuth>
+    }></Route>
+
+    <Route path='/dashboard' element={
+    <RequireAuth>
+     <Dashboard></Dashboard>
     </RequireAuth>
     }></Route>
 
