@@ -9,7 +9,7 @@ const MyOrders = () => {
     useEffect(() => {
         const getOrders = async () => {
             const email = user.email;
-            const url = `http://localhost:5000/ordered-products?email=${email}`;
+            const url = `https://sheltered-basin-70963.herokuapp.com/ordered-products?email=${email}`;
             const { data } = await axios.get(url);
             setMyOrders(data);
 
@@ -21,7 +21,7 @@ const MyOrders = () => {
         if(proceed){
 
             console.log('deleting', id);
-            const url = `http://localhost:5000/ordered-products/${id}`;
+            const url = `https://sheltered-basin-70963.herokuapp.com/ordered-products/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

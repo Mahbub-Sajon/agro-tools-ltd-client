@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const useOrderedProducts = () => {
     const [orderedProducts, setOrderedProducts] = useState([]);
     useEffect( () => {
-        fetch('http://localhost:5000/ordered-products')
+        fetch('https://sheltered-basin-70963.herokuapp.com/ordered-products')
         .then(res => res.json())
         .then(data => setOrderedProducts(data))
     } , []);

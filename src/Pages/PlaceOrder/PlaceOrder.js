@@ -10,7 +10,7 @@ const PlaceOrder = () => {
     const [user, loading] = useAuthState(auth);
     const [products,setProducts] = useState({});
     useEffect(() =>{
-        const url = `http://localhost:5000/place-order/${id}`;
+        const url = `https://sheltered-basin-70963.herokuapp.com/place-order/${id}`;
         fetch(url)
         .then(res => res.json())
         .then(data => setProducts(data))
@@ -45,7 +45,7 @@ const PlaceOrder = () => {
         event.target.reset();
 
 
-        axios.post('http://localhost:5000/order' , order)
+        axios.post('https://sheltered-basin-70963.herokuapp.com/order' , order)
         .then(response => {
            const {data} = response;
         })

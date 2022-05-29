@@ -6,7 +6,7 @@
 //         if(proceed){
 
 //             console.log('deleting', id);
-//             const url = `http://localhost:5000/ordered-products/${id}`;
+//             const url = `https://sheltered-basin-70963.herokuapp.com/ordered-products/${id}`;
 //             fetch(url, {
 //                 method: 'DELETE'
 //             })
