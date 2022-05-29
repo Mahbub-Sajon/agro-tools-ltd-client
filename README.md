@@ -1,16 +1,13 @@
-# PLANT-PLANET
+# AGRO-TOOLS-LTD
 
 ## Live site link:
-https://plant-planet-def76.web.app/
+https://agro-tools-ltd.web.app/
 
 ## Server site link:
-https://mighty-scrubland-45188.herokuapp.com/
-
-## StackOverFlow Link:
-https://stackoverflow.com/questions/72316851/while-using-env-file-in-mongodb-then-it-shows-me-error
+https://sheltered-basin-70963.herokuapp.com/
 
 ## Features
-This is an inventory management system! You can stocking, delivering, updating, deleting and adding your products! Several users can use this site to monitor their product. This site is completely safe for users cause others users won't be able to see your activity. You need sign up or sing in to do such activity. 
+This is an Agricultural tools manufacturing company's web site ! You can see, order, pay for your products! Several users can use this site to monitor their product. This site is completely safe for users cause others users won't be able to see your activity. You need sign up or sing in to do such activity. 
 
 ## Technology used
 ### React app
@@ -18,6 +15,7 @@ This is an inventory management system! You can stocking, delivering, updating, 
  ### Firebase hook 
  ### React Router 
  ### Tailwind CSS 
+ ### Daisy UI
  ### Email-Password 
  ### Google verification 
  ### Reset password system
