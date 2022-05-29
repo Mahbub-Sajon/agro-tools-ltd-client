@@ -3,7 +3,7 @@ import React from 'react';
 const BuyNow = () => {
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200">
+            <div className="hero  bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <img src="https://www.betterteam.com/images/gardener-job-description-2579x3868-20201121.jpeg?crop=1:1,smart&width=1200&dpr=2" className="max-w-sm rounded-lg shadow-2xl" />
     <div>

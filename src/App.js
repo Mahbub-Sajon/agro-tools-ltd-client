@@ -10,6 +10,8 @@ import RequireAuth from './Pages/Components/RequireAuth/RequireAuth';
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Review from './Pages/Components/Review/Review';
+import NotFound from './Pages/NotFound/NotFound';
+import About from './Pages/About/About';
 
 function App() {
   return (
@@ -42,6 +44,8 @@ function App() {
     <Route path='/signup' element={<SignUp></SignUp>}></Route>
     <Route path='/login' element={<Login></Login>}></Route>
     <Route path='/blog' element={<Blog></Blog>}></Route>
+    <Route path='*' element={<NotFound></NotFound>}></Route>
+    <Route path='/about' element={<About></About>}></Route>
      </Routes>
     </div>
   );
