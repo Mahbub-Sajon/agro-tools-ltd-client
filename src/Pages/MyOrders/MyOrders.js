@@ -43,6 +43,7 @@ const MyOrders = () => {
             {
                 myOrders.map(myOrder => <div key={myOrder._id}>
                     <h2>Product Name: {myOrder.product}</h2>
+                    <h3>Email: {user.email}</h3>
                     <p>Ordered Quantity: {myOrder.orderQuantity}</p>
                     <div className='flex'>
                         <button className='btn btn-primary mr-5'>Payment</button>
