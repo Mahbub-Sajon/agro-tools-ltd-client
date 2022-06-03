@@ -28,7 +28,8 @@ const PlaceOrder = () => {
             price: products.price,
             address: event.target.address.value,
             phone: event.target.phone.value,
-            orderQuantity: event.target.quantity.value
+            orderQuantity: event.target.quantity.value,
+            totalPrice: event.target.quantity.value * products.price
 
         }
 

@@ -15,6 +15,8 @@ import About from './Pages/About/About';
 import MyProfile from './Pages/MyProfile/MyProfile';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import AllUsers from './Pages/Components/AllUsers/AllUsers';
+import RequireAdmin from './Pages/Components/RequireAdmin/RequireAdmin';
+import Payment from './Pages/Components/Payment/Payment';
 
 function App() {
   return (
@@ -29,6 +31,12 @@ function App() {
     </RequireAuth>
     }></Route>
 
+    <Route path='/payment/:id' element={
+    <RequireAuth>
+     <Payment></Payment>
+    </RequireAuth>
+    }></Route>
+
     <Route path='/dashboard' element={
     <RequireAuth>
      <Dashboard></Dashboard>
@@ -36,7 +44,7 @@ function App() {
     }>
       <Route index element={ <MyOrders></MyOrders>}></Route>
       <Route path='review' element={<Review></Review>}></Route>
-      <Route path='all-users' element={<AllUsers></AllUsers>}></Route>
+      <Route path='all-users' element={<RequireAdmin><AllUsers></AllUsers></RequireAdmin>}></Route>
       <Route path='my-profile' element={
     <RequireAuth>
      <MyProfile></MyProfile>
