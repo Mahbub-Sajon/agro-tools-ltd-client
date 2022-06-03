@@ -14,6 +14,7 @@ import NotFound from './Pages/NotFound/NotFound';
 import About from './Pages/About/About';
 import MyProfile from './Pages/MyProfile/MyProfile';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
+import AllUsers from './Pages/Components/AllUsers/AllUsers';
 
 function App() {
   return (
@@ -35,6 +36,12 @@ function App() {
     }>
       <Route index element={ <MyOrders></MyOrders>}></Route>
       <Route path='review' element={<Review></Review>}></Route>
+      <Route path='all-users' element={<AllUsers></AllUsers>}></Route>
+      <Route path='my-profile' element={
+    <RequireAuth>
+     <MyProfile></MyProfile>
+    </RequireAuth>
+    }></Route>
     </Route>
 
     <Route path='/place-order/:id' element={
@@ -43,17 +50,14 @@ function App() {
     </RequireAuth>
     }></Route>
 
-<Route path='/my-profile' element={
-    <RequireAuth>
-     <MyProfile></MyProfile>
-    </RequireAuth>
-    }></Route>
+
 
     <Route path='/signup' element={<SignUp></SignUp>}></Route>
     <Route path='/login' element={<Login></Login>}></Route>
     <Route path='/blog' element={<Blog></Blog>}></Route>
     <Route path='*' element={<NotFound></NotFound>}></Route>
     <Route path='/about' element={<About></About>}></Route>
+   
     <Route path='/my-portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
 
 

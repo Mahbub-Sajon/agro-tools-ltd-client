@@ -1,27 +1,39 @@
-import axios from 'axios';
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const MyOrders = () => {
-    const [user] = useAuthState(auth)
+    const [user] = useAuthState(auth);
+    const navigate = useNavigate();
     const [myOrders, setMyOrders] = useState([]);
     useEffect(() => {
-        const getOrders = async () => {
-            const email = user.email;
-            const url = `https://sheltered-basin-70963.herokuapp.com/ordered-products?email=${email}`;
-            const { data } = await axios.get(url);
-            setMyOrders(data);
-
+        if(user){
+            fetch(`http://localhost:5000/ordered-products?email=${user.email}`, {
+                method: 'GET',
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+            .then(res => {
+                console.log('res', res);
+                if(res.status === 401 || res.status === 403){
+                    signOut(auth);
+                    localStorage.removeItem('accessToken')
+                    navigate('/')
+                }
+                return res.json()
+            })
+            .then(data => setMyOrders(data));
         }
-        getOrders();
     }, [user]);
     const handleOrderCancel = id => {
         const proceed = window.confirm('Are you sure you want to cancel?')
         if(proceed){
 
             console.log('deleting', id);
-            const url = `https://sheltered-basin-70963.herokuapp.com/ordered-products/${id}`;
+            const url = `http://localhost:5000/ordered-products/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

@@ -5,9 +5,11 @@ import social from '../../images/social/google.png'
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading/Loading';
 import { Link, useNavigate } from 'react-router-dom';
+import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const navigate = useNavigate();
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [
         createUserWithEmailAndPassword,
@@ -18,7 +20,10 @@ const SignUp = () => {
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-    const navigate = useNavigate();
+    
+
+
+    const [token] = useToken(user || gUser)
 
     let errorMessage;
     if (loading || gLoading || updating) {
@@ -27,14 +32,15 @@ const SignUp = () => {
     if (error || gError || updateError) {
         errorMessage = <p className='text-red-800'>{error?.message || gError?.message || updateError?.message}</p>
     }
-    if (user || gUser) {
-        console.log(gUser);
+    if (token) {
+        navigate('/');
     }
     const onSubmit = async data => {
         console.log(data);
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
         navigate('/');
+       
 
     }
     return (
