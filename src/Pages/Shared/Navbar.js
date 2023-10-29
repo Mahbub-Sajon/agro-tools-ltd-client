@@ -20,7 +20,7 @@ const Navbar = () => {
             user && <li><Link to='/dashboard'>DASHBOARD</Link></li>
         }
         <li><Link to="/signup">SIGN UP</Link></li>
-        <li><Link to="/blog">BLOG</Link></li>
+        {/* <li><Link to="/blog">BLOG</Link></li> */}
         <li><Link to="/my-portfolio">MY PORTFOLIO</Link></li>
         <li><Link to="/about">ABOUT</Link></li>
     </>
