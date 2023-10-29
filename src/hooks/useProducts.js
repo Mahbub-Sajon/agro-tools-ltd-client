@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const useProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect( () => {
-        fetch('https://sheltered-basin-70963.herokuapp.com/products')
+        fetch('https://agro-tools-ltd-server.vercel.app/products')
         .then(res => res.json())
         .then(data => setProducts(data))
     } , []);

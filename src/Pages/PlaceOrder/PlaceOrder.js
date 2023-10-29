@@ -10,7 +10,7 @@ const PlaceOrder = () => {
     const [user, loading] = useAuthState(auth);
     const [products, setProducts] = useState({});
     useEffect(() => {
-        const url = `https://sheltered-basin-70963.herokuapp.com/place-order/${id}`;
+        const url = `https://agro-tools-ltd-server.vercel.app/place-order/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data))
@@ -46,7 +46,7 @@ const PlaceOrder = () => {
         event.target.reset();
 
 
-        axios.post('https://sheltered-basin-70963.herokuapp.com/order', order)
+        axios.post('https://agro-tools-ltd-server.vercel.app/order', order)
             .then(response => {
                 const { data } = response;
             })

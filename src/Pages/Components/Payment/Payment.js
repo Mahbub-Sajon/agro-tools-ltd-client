@@ -10,7 +10,7 @@ import CheckoutForm from '../CheckoutForm/CheckoutForm';
 const stripePromise = loadStripe('pk_test_51L6WxdEdgsIsqW9Cc7nRYqM0LSEIN6RTFXHhiNZGsjVNCZ7WCgKX97hpr7PxPGKrwtVppkzsQy6iWoHSelAA1oFB00MyYy7teB');
 const Payment = () => {
     const { id } = useParams();
-    const url = `https://sheltered-basin-70963.herokuapp.com/order/${id}`;
+    const url = `https://agro-tools-ltd-server.vercel.app/order/${id}`;
     const { data: payment, isLoading } = useQuery(['order', id], () => fetch(url, {
         method: "GET",
         headers: {

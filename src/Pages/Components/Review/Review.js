@@ -18,7 +18,7 @@ const Review = () => {
             textReview: event.target.review.value,
             startReview: event.target.rating.value
         }
-        axios.post('https://sheltered-basin-70963.herokuapp.com/review' , review)
+        axios.post('https://agro-tools-ltd-server.vercel.app/review' , review)
         .then(response => {
            const {data} = response;
         });

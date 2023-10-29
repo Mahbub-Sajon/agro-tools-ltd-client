@@ -11,7 +11,7 @@ const MyOrders = () => {
     const [myOrders, setMyOrders] = useState([]);
     useEffect(() => {
         if(user){
-            fetch(`https://sheltered-basin-70963.herokuapp.com/ordered-products?email=${user.email}`, {
+            fetch(`https://agro-tools-ltd-server.vercel.app/ordered-products?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -34,7 +34,7 @@ const MyOrders = () => {
         if(proceed){
 
             console.log('deleting', id);
-            const url = `https://sheltered-basin-70963.herokuapp.com/ordered-products/${id}`;
+            const url = `https://agro-tools-ltd-server.vercel.app/ordered-products/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

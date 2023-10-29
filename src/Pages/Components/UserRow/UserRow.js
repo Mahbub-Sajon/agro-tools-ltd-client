@@ -3,7 +3,7 @@ import React from 'react';
 const UserRow = ({ user }) => {
     const { email, role } = user;
     const makeAdmin =() => {
-        fetch(`https://sheltered-basin-70963.herokuapp.com/user/admin/${email}`, {
+        fetch(`https://agro-tools-ltd-server.vercel.app/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

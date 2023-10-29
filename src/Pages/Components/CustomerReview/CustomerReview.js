@@ -5,7 +5,7 @@ const CustomerReview = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
         const getReviews = async () => {
-            const url = "https://sheltered-basin-70963.herokuapp.com/review";
+            const url = "https://agro-tools-ltd-server.vercel.app/review";
             const {data} = await axios.get(url);
             setReviews(data.slice(-3));
         }
